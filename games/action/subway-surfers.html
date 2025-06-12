@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subway Surfers - Free Online Game | Monster Survivors</title>
+    <meta name="description" content="Play Subway Surfers online for free! Run, jump, and dodge through the subway in this endless runner game.">
+    <meta name="keywords" content="subway surfers, endless runner, action game, free game">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <i class="fas fa-gamepad me-2"></i>Monster Survivors
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../categories/action.html">
+                            <i class="fas fa-fist-raised me-1"></i>Action Games
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Search Box -->
+                <div class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search games..." id="searchInput">
+                        <button class="btn btn-primary" type="button" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Game Area -->
+            <div class="col-lg-9">
+                <!-- Game Info Header -->
+                <div class="mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../../categories/action.html">Action Games</a></li>
+                            <li class="breadcrumb-item active">Subway Surfers</li>
+                        </ol>
+                    </nav>
+                    
+                    <h1 class="game-title mb-3">Subway Surfers</h1>
+                    
+                    <div class="game-meta">
+                        <span class="badge bg-primary">Action</span>
+                        <span class="game-rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            4.8
+                        </span>
+                        <span class="play-count">
+                            <i class="fas fa-users text-primary"></i>
+                            2.5M plays
+                        </span>
+                        <span class="game-date">
+                            <i class="fas fa-calendar text-secondary"></i>
+                            Updated Dec 2024
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Game Container -->
+                <div class="game-container bg-white">
+                    <div class="game-frame">
+                        <div class="game-loading" id="gameLoading">
+                            <div class="text-center">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="text-muted">Loading Subway Surfers...</p>
+                            </div>
+                        </div>
+                        <iframe 
+                            id="game-iframe"
+                            src="https://subwaysurfersgame.co/"
+                            frameborder="0" 
+                            scrolling="no" 
+                            allowfullscreen
+                            style="display: none;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3>About Subway Surfers</h3>
+                        <p class="game-description">
+                            Subway Surfers is the ultimate endless running game! Join Jake, Tricky & Fresh as they escape from the grumpy Inspector and his dog. Run as far as you can in this endless running adventure! Navigate the subway tracks, dodge oncoming trains, collect coins, and perform incredible acrobatic stunts.
+                        </p>
+                        <p>
+                            Features exciting power-ups like the Jetpack, Super Sneakers, Coin Magnet, and more. Unlock new characters and hoverboards as you progress. With colorful HD graphics and smooth gameplay, Subway Surfers offers the ultimate mobile gaming experience.
+                        </p>
+                        
+                        <h4>How to Play</h4>
+                        <ul>
+                            <li><strong>Arrow Keys / WASD:</strong> Move left, right, jump, and slide</li>
+                            <li><strong>Spacebar:</strong> Activate power-ups</li>
+                            <li><strong>Mouse:</strong> Navigate menus and select items</li>
+                        </ul>
+                        
+                        <div class="tags mt-3">
+                            <span class="tag">Endless Runner</span>
+                            <span class="tag">3D Graphics</span>
+                            <span class="tag">Power-ups</span>
+                            <span class="tag">Coins</span>
+                            <span class="tag">High Score</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-fire me-2"></i>Recommended Games
+                        </h5>
+                    </div>
+                    <div class="card-body p-0" id="recommendedGames">
+                        <!-- Recommended games will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../assets/js/main.js"></script>
+    
+    <script>
+        // Game-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load iframe when page is ready
+            const iframe = document.getElementById('game-iframe');
+            const loading = document.getElementById('gameLoading');
+            
+            iframe.onload = function() {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            };
+            
+            // Show iframe after a short delay (fallback)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            }, 3000);
+        });
+    </script>
+</body>
+</html> 

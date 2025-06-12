@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Hook - Free Online Game | Monster Survivors</title>
+    <meta name="description" content="Play Stickman Hook online for free! Swing through challenging levels with physics-based gameplay.">
+    <meta name="keywords" content="stickman hook, physics game, puzzle game, free game">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <i class="fas fa-gamepad me-2"></i>Monster Survivors
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../categories/puzzle.html">
+                            <i class="fas fa-puzzle-piece me-1"></i>Puzzle Games
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Search Box -->
+                <div class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search games..." id="searchInput">
+                        <button class="btn btn-primary" type="button" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Game Area -->
+            <div class="col-lg-9">
+                <!-- Game Info Header -->
+                <div class="mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../../categories/puzzle.html">Puzzle Games</a></li>
+                            <li class="breadcrumb-item active">Stickman Hook</li>
+                        </ol>
+                    </nav>
+                    
+                    <h1 class="game-title mb-3">Stickman Hook</h1>
+                    
+                    <div class="game-meta">
+                        <span class="badge bg-success">Puzzle</span>
+                        <span class="game-rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            4.6
+                        </span>
+                        <span class="play-count">
+                            <i class="fas fa-users text-primary"></i>
+                            1.8M plays
+                        </span>
+                        <span class="game-date">
+                            <i class="fas fa-calendar text-secondary"></i>
+                            Updated Dec 2024
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Game Container -->
+                <div class="game-container bg-white">
+                    <div class="game-frame">
+                        <div class="game-loading" id="gameLoading">
+                            <div class="text-center">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="text-muted">Loading Stickman Hook...</p>
+                            </div>
+                        </div>
+                        <iframe 
+                            id="game-iframe"
+                            src="https://stickman-hook.com/"
+                            frameborder="0" 
+                            scrolling="no" 
+                            allowfullscreen
+                            style="display: none;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3>About Stickman Hook</h3>
+                        <p class="game-description">
+                            Stickman Hook is an awesome physics-based puzzle game where you control a stickman character swinging through challenging levels! Tap to hook and make incredible jumps as you avoid every obstacle that stands in your way. Master the physics of swinging to complete each level with style.
+                        </p>
+                        <p>
+                            Execute acrobatic tricks in the air as you aim for the finish line. The more acrobatic your tricks, the more points you'll earn! With smooth animations and intuitive controls, this game offers hours of entertaining gameplay.
+                        </p>
+                        
+                        <h4>How to Play</h4>
+                        <ul>
+                            <li><strong>Mouse/Touch:</strong> Click and hold to extend your hook and swing</li>
+                            <li><strong>Release:</strong> Let go to detach and fly through the air</li>
+                            <li><strong>Physics:</strong> Use momentum and timing to reach the goal</li>
+                            <li><strong>Tricks:</strong> Perform spins and flips for extra points</li>
+                        </ul>
+                        
+                        <div class="tags mt-3">
+                            <span class="tag">Physics</span>
+                            <span class="tag">Swinging</span>
+                            <span class="tag">Platformer</span>
+                            <span class="tag">Stickman</span>
+                            <span class="tag">Acrobatics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-fire me-2"></i>Recommended Games
+                        </h5>
+                    </div>
+                    <div class="card-body p-0" id="recommendedGames">
+                        <!-- Recommended games will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../assets/js/main.js"></script>
+    
+    <script>
+        // Game-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load iframe when page is ready
+            const iframe = document.getElementById('game-iframe');
+            const loading = document.getElementById('gameLoading');
+            
+            iframe.onload = function() {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            };
+            
+            // Show iframe after a short delay (fallback)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            }, 3000);
+        });
+    </script>
+</body>
+</html> 
