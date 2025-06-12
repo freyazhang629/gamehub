@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Games - Free Online Games | GameHub</title>
+    <meta name="description" content="Play the best free action games online. Fast-paced adventures, combat games, and adrenaline-pumping action await!">
+    <meta name="keywords" content="action games, online games, free games, combat games, adventure games">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/game-placeholders.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-gamepad me-2"></i>GameHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-th-large me-1"></i>Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">By Type</h6></li>
+                            <li><a class="dropdown-item active" href="action.html">
+                                <i class="fas fa-fist-raised me-2"></i>Action Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="shooting.html">
+                                <i class="fas fa-crosshairs me-2"></i>Shooting Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="puzzle.html">
+                                <i class="fas fa-puzzle-piece me-2"></i>Puzzle Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="strategy.html">
+                                <i class="fas fa-chess me-2"></i>Strategy Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="sports.html">
+                                <i class="fas fa-futbol me-2"></i>Sports Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="adventure.html">
+                                <i class="fas fa-map me-2"></i>Adventure Games
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../trending.html">
+                            <i class="fas fa-fire me-1"></i>Trending
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new.html">
+                            <i class="fas fa-star me-1"></i>New Games
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Search Box -->
+                <div class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search games..." id="searchInput">
+                        <button class="btn btn-primary" type="button" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Action Games</li>
+            </ol>
+        </nav>
+
+        <!-- Category Header -->
+        <div class="category-header mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-fist-raised text-danger me-3"></i>Action Games
+                    </h1>
+                    <p class="lead text-muted">
+                        Get your adrenaline pumping with our collection of fast-paced action games! 
+                        Experience intense combat, thrilling adventures, and non-stop excitement.
+                    </p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="category-stats">
+                        <span class="badge bg-danger fs-6 px-3 py-2">
+                            <i class="fas fa-gamepad me-2"></i>6 Games Available
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter and Sort -->
+        <div class="search-filters mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5 class="mb-0">Filter Games</h5>
+                    <div class="mt-2">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="new">New</button>
+                        <button class="filter-btn" data-filter="trending">Trending</button>
+                        <button class="filter-btn" data-filter="top-rated">Top Rated</button>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <select class="form-select w-auto d-inline-block" id="sortSelect">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest First</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">A to Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="row" id="action-games-grid">
+            <!-- Games will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-5 mb-5">
+            <button class="btn btn-outline-primary btn-lg" id="loadMoreBtn">
+                <i class="fas fa-plus me-2"></i>Load More Games
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-gamepad me-2"></i>GameHub
+                    </h5>
+                    <p class="text-light">
+                        Your ultimate destination for free online games. Play thousands of games without downloads or installations.
+                    </p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="action.html" class="text-light">Action</a></li>
+                        <li><a href="shooting.html" class="text-light">Shooting</a></li>
+                        <li><a href="puzzle.html" class="text-light">Puzzle</a></li>
+                        <li><a href="strategy.html" class="text-light">Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Popular</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../trending.html" class="text-light">Trending</a></li>
+                        <li><a href="../new.html" class="text-light">New Games</a></li>
+                        <li><a href="../leaderboard.html" class="text-light">Top Rated</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h6 class="mb-3">Connect With Us</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 GameHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for gamers worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        // Load action games when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const actionGames = window.GameHub.filterGamesByCategory('action');
+            const gamesGrid = document.getElementById('action-games-grid');
+            
+            if (gamesGrid && actionGames.length > 0) {
+                gamesGrid.innerHTML = actionGames.map(game => window.GameHub.createGameCard(game)).join('');
+            } else if (gamesGrid) {
+                gamesGrid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No action games available at the moment.</p></div>';
+            }
+            
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    let filteredGames = actionGames;
+                    
+                    if (filter === 'new') {
+                        filteredGames = actionGames.filter(game => game.isNew);
+                    } else if (filter === 'trending') {
+                        filteredGames = actionGames.filter(game => game.isTrending);
+                    } else if (filter === 'top-rated') {
+                        filteredGames = actionGames.filter(game => game.rating >= 4.5);
+                    }
+                    
+                    gamesGrid.innerHTML = filteredGames.map(game => window.GameHub.createGameCard(game)).join('');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

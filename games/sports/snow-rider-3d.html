@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Rider 3D - Monster Survivors</title>
+    <meta name="description" content="Thrilling 3D snowboarding adventure">
+    <link rel="canonical" href="https://monstersurvivors.bio/games/sports/snow-rider-3d">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <i class="fas fa-gamepad me-2 text-primary"></i>Monster Survivors
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../categories/sports.html">体育游戏</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h1 class="h3 mb-3">Snow Rider 3D</h1>
+                        <p class="text-muted mb-3">Thrilling 3D snowboarding adventure</p>
+                        <div class="d-flex gap-3 mb-3">
+                            <span class="badge bg-primary">体育游戏</span>
+                            <span class="badge bg-warning text-dark"><i class="fas fa-star"></i> 4.4</span>
+                            <span class="badge bg-info"><i class="fas fa-play"></i> 650K</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="startGame()">
+                            <i class="fas fa-play me-2"></i>开始游戏
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card game-container">
+                    <div class="card-body p-0">
+                        <div class="game-frame">
+                            <div id="game-loading" class="game-loading">
+                                <div class="text-center">
+                                    <div class="spinner-border text-primary mb-3" role="status"></div>
+                                    <p>游戏加载中...</p>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="game-iframe" 
+                                src="https://www.crazygames.com/embed/snow-rider-3d"
+                                style="width: 100%; height: 600px; border: none; display: none;"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Monster Survivors</h5>
+                    <p class="text-muted">最好的在线游戏平台</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted">&copy; 2024 Monster Survivors. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        function startGame() {
+            const loading = document.getElementById('game-loading');
+            const iframe = document.getElementById('game-iframe');
+            loading.style.display = 'none';
+            iframe.style.display = 'block';
+            iframe.scrollIntoView({ behavior: 'smooth' });
+        }
+        window.addEventListener('load', function() {
+            setTimeout(startGame, 1000);
+        });
+    </script>
+</body>
+</html> 

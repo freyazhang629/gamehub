@@ -1,0 +1,26 @@
+# MacOS 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# Node modules (如果有)
+node_modules/
+
+# 构建输出
+dist/
+build/ 

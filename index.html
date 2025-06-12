@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Survivors - Free Online Games Platform</title>
+    <meta name="description" content="Play thousands of free online games! Action, puzzle, adventure, sports and more. No downloads required.">
+    <meta name="keywords" content="free games, online games, browser games, action games, puzzle games">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/game-placeholders.css"> -->
+    <style>
+        /* --- 游戏卡片样式优化 --- */
+        .game-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 290px;
+            background-color: white;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        .card-img-wrapper {
+            position: relative;
+            height: 170px;
+            overflow: hidden;
+        }
+        .game-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .game-card:hover .game-screenshot {
+            transform: scale(1.05);
+        }
+        .card-body {
+            height: 120px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* 轮播图样式优化 */
+        .hero-slide {
+            background-attachment: fixed;
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .rating-badge, .trending-badge {
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-gamepad me-2"></i>Monster Survivors
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-th-large me-1"></i>Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">By Type</h6></li>
+                            <li><a class="dropdown-item" href="categories/action.html">
+                                <i class="fas fa-fist-raised me-2"></i>Action Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="categories/shooting.html">
+                                <i class="fas fa-crosshairs me-2"></i>Shooting Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="categories/puzzle.html">
+                                <i class="fas fa-puzzle-piece me-2"></i>Puzzle Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="categories/strategy.html">
+                                <i class="fas fa-chess me-2"></i>Strategy Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="categories/sports.html">
+                                <i class="fas fa-futbol me-2"></i>Sports Games
+                            </a></li>
+                            <li><a class="dropdown-item" href="categories/adventure.html">
+                                <i class="fas fa-map me-2"></i>Adventure Games
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">By Theme</h6></li>
+                            <li><a class="dropdown-item" href="themes/horror.html">
+                                <i class="fas fa-ghost me-2"></i>Horror
+                            </a></li>
+                            <li><a class="dropdown-item" href="themes/anime.html">
+                                <i class="fas fa-star me-2"></i>Anime Style
+                            </a></li>
+                            <li><a class="dropdown-item" href="themes/pixel.html">
+                                <i class="fas fa-th me-2"></i>Pixel Art
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trending.html">
+                            <i class="fas fa-fire me-1"></i>Trending
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new.html">
+                            <i class="fas fa-star me-1"></i>New Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leaderboard.html">
+                            <i class="fas fa-trophy me-1"></i>Leaderboard
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Search Box -->
+                <div class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search games..." id="searchInput">
+                        <button class="btn btn-primary" type="button" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide bg-gradient-1">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        Play Amazing Games Online
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Discover thousands of free games. No downloads, no installations. Just pure gaming fun!
+                                    </p>
+                                    <a href="#featured-games" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-play me-2"></i>Start Playing
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="hero-illustration">
+                                        <i class="fas fa-gamepad fa-10x text-white-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="hero-slide bg-gradient-2">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        New Games Every Week
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Stay updated with the latest and greatest games added to our platform.
+                                    </p>
+                                    <a href="new.html" class="btn btn-success btn-lg">
+                                        <i class="fas fa-star me-2"></i>View New Games
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="hero-slide bg-gradient-3">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        All Your Favorite Categories
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Action, Adventure, Puzzle, Sports - find games for every mood and preference.
+                                    </p>
+                                    <a href="#categories-grid" class="btn btn-warning btn-lg">
+                                        <i class="fas fa-th me-2"></i>Browse Categories
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section class="py-5 bg-light" id="featured-games">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="mb-3">
+                        <i class="fas fa-fire text-danger me-2"></i>Trending Games
+                    </h2>
+                    <p class="text-muted">Most popular games right now</p>
+                </div>
+            </div>
+            
+            <div class="row g-4" id="trending-games">
+                <!-- Games will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="trending.html" class="btn btn-outline-primary">
+                    View All Trending Games
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Games -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="mb-3">
+                        <i class="fas fa-star text-warning me-2"></i>Latest Games
+                    </h2>
+                    <p class="text-muted">Fresh games added this week</p>
+                </div>
+            </div>
+            
+            <div class="row g-4" id="latest-games">
+                <!-- Games will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="new.html" class="btn btn-outline-success">
+                    View All New Games
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Categories -->
+    <section class="py-4 bg-light" id="categories-grid">
+        <div class="container">
+            <h3 class="text-center mb-4">Browse by Category</h3>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/games/action" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-fist-raised fa-3x text-danger mb-3"></i>
+                                <h5 class="card-title">Action</h5>
+                                <p class="card-text text-muted">Fast-paced adventures</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="categories/shooting.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-crosshairs fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">Shooting</h5>
+                                <p class="card-text text-muted">Aim and fire games</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="categories/puzzle.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-puzzle-piece fa-3x text-info mb-3"></i>
+                                <h5 class="card-title">Puzzle</h5>
+                                <p class="card-text text-muted">Brain teasers</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="categories/strategy.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-chess fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Strategy</h5>
+                                <p class="card-text text-muted">Think and plan</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="categories/sports.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-futbol fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Sports</h5>
+                                <p class="card-text text-muted">Athletic competitions</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="categories/adventure.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-map fa-3x text-secondary mb-3"></i>
+                                <h5 class="card-title">Adventure</h5>
+                                <p class="card-text text-muted">Explore new worlds</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="themes/horror.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-ghost fa-3x text-dark mb-3"></i>
+                                <h5 class="card-title">Horror</h5>
+                                <p class="card-text text-muted">Spine-chilling thrills</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="themes/pixel.html" class="category-card">
+                        <div class="card h-100 text-center border-0 shadow-sm category-hover">
+                            <div class="card-body">
+                                <i class="fas fa-th fa-3x text-purple mb-3"></i>
+                                <h5 class="card-title">Pixel Art</h5>
+                                <p class="card-text text-muted">Retro gaming style</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-gamepad me-2"></i>Monster Survivors
+                    </h5>
+                    <p class="text-light">
+                        Your ultimate destination for free online games. Play thousands of games without downloads or installations.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="categories/action.html" class="text-light">Action</a></li>
+                        <li><a href="categories/shooting.html" class="text-light">Shooting</a></li>
+                        <li><a href="categories/puzzle.html" class="text-light">Puzzle</a></li>
+                        <li><a href="categories/strategy.html" class="text-light">Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Popular</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="trending.html" class="text-light">Trending</a></li>
+                        <li><a href="new.html" class="text-light">New Games</a></li>
+                        <li><a href="leaderboard.html" class="text-light">Top Rated</a></li>
+                        <li><a href="favorites.html" class="text-light">Favorites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                        <li><a href="privacy.html" class="text-light">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-light">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="search.html" class="text-light">Search</a></li>
+                        <li><a href="sitemap.html" class="text-light">Sitemap</a></li>
+                        <li><a href="developers.html" class="text-light">For Developers</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 GameHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for gamers worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // 防止闪屏的加载管理
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页面加载完成后移除loading状态
+            document.body.classList.add('loaded');
+            
+            // 确保CSS和图片都已加载
+            window.addEventListener('load', function() {
+                // 平滑显示内容
+                document.body.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html> 

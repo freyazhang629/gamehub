@@ -1,0 +1,318 @@
+:root {
+    --primary: #6f42c1;
+    --secondary: #6c757d;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --purple-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body {
+    background-color: var(--light);
+    padding-top: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Game Card & Image Loading Fix --- */
+.game-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 290px; /* Fixed height */
+    background-color: white;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 170px;
+    background-color: #e9ecef; /* Placeholder background color */
+}
+
+.game-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Visible by default */
+    transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+}
+
+.game-screenshot.loaded {
+    opacity: 1; /* Visible when loaded */
+}
+
+.card-body {
+    height: 120px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* --- Other General Styles --- */
+.navbar-brand {
+    font-weight: 700;
+}
+.section-title {
+    font-weight: 600;
+}
+
+/* --- Game Detail Page --- */
+.game-container {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.game-frame {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #f8f9fa;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.game-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    z-index: 10;
+}
+
+.game-iframe, #game-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+}
+
+/* 推荐游戏样式 */
+.recommended-game-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.recommended-game-item:hover {
+    background-color: #f8f9fa;
+}
+
+.recommended-game-item:last-child {
+    border-bottom: none;
+}
+
+.recommended-game-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #495057;
+}
+
+.recommended-game-category {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* 游戏详情页字段显示优化 */
+.game-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.game-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.game-meta .badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+}
+
+/* 默认值样式 */
+.default-rating, .default-plays, .default-date {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* 长文本处理 */
+.game-description {
+    line-height: 1.6;
+}
+
+.read-more-link {
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+/* 游戏标题溢出处理 */
+.game-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    cursor: help;
+}
+
+.game-title[title] {
+    position: relative;
+}
+
+/* 游戏标签样式优化 */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background-color: #6f42c1;
+    color: white;
+    text-decoration: none;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .game-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .game-meta span {
+        font-size: 0.85rem;
+    }
+    
+    .game-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        white-space: normal;
+        text-overflow: unset;
+        overflow: visible;
+    }
+    
+    .tags {
+        gap: 0.3rem;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* 加载状态和错误处理 */
+.game-card img {
+    transition: opacity 0.3s ease;
+}
+
+.game-card img[src*="placeholder"] {
+    opacity: 0.7;
+    background-color: #f8f9fa;
+}
+
+.game-info-missing {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* 改进的游戏卡片样式 */
+.card-body .game-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+/* 游戏评分星级显示 */
+.game-rating i.fas.fa-star {
+    color: #ffc107;
+    margin-right: 0.2rem;
+}
+
+.default-rating i.fas.fa-star {
+    color: #dee2e6;
+}
+
+/* 播放次数图标样式 */
+.play-count i.fas.fa-users,
+.play-count i.fas.fa-play {
+    color: #17a2b8;
+    margin-right: 0.2rem;
+}
+
+/* 缺失内容提示 */
+.content-placeholder {
+    background-color: #f8f9fa;
+    border: 1px dashed #dee2e6;
+    padding: 1rem;
+    text-align: center;
+    color: #6c757d;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.content-placeholder i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+} 

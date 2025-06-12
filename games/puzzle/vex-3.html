@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX 3 - Monster Survivors</title>
+    <meta name="description" content="Master challenging platform obstacles in this addictive physics-based puzzle game. Perfect your precision and timing skills!">
+    <link rel="canonical" href="https://monstersurvivors.bio/games/puzzle/vex-3">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="VEX 3 - Monster Survivors">
+    <meta property="og:description" content="Master challenging platform obstacles in this addictive physics-based puzzle game">
+    <meta property="og:url" content="https://monstersurvivors.bio/games/puzzle/vex-3">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://img.silvergames.com/games/vex-3/cover.png">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/game-placeholders.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <i class="fas fa-gamepad me-2 text-primary"></i>Monster Survivors
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../categories/puzzle.html">Puzzle Games</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <input class="form-control me-2 search-input" type="search" placeholder="Search games...">
+                    <button class="btn btn-outline-primary search-btn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-5 pt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../../categories/puzzle.html">Puzzle Games</a></li>
+                <li class="breadcrumb-item active">VEX 3</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Game Container -->
+    <div class="container my-5" style="margin-top: 2rem !important;">
+        <div class="row">
+            <div class="col-lg-9">
+                <!-- Game Info -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h1 class="h3 mb-3">VEX 3</h1>
+                                <p class="text-muted mb-3">Master challenging platform obstacles in this addictive physics-based puzzle game. Perfect your precision and timing to reach the finish line!</p>
+                                <div class="d-flex gap-3 mb-3">
+                                    <span class="badge bg-primary">Puzzle Game</span>
+                                    <span class="badge bg-warning text-dark">
+                                        <i class="fas fa-star"></i> 4.6
+                                    </span>
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-play"></i> 1.8M
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <button class="btn btn-primary btn-lg" onclick="startGame()">
+                                    <i class="fas fa-play me-2"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Frame -->
+                <div class="card game-container">
+                    <div class="card-body p-0" style="position: relative;">
+                        <div class="game-frame">
+                            <div id="game-loading" class="game-loading">
+                                <div class="text-center">
+                                    <div class="spinner-border text-primary mb-3" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <p>Loading game...</p>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="game-iframe" 
+                                src=""
+                                data-src="https://www.silvergames.com/en/vex-3/iframe"
+                                class="game-iframe"
+                                style="display: none; opacity: 0;"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4>Game Overview</h4>
+                        <p>VEX 3 is an addictive physics-based platform game where players control a stickman character through challenging obstacle courses. The core gameplay revolves around mastering precise movement controls and perfect timing to navigate through physics-powered jumps and challenging obstacles.</p>
+                        
+                        <h5>Game Features:</h5>
+                        <ul>
+                            <li>Precise character control mechanics</li>
+                            <li>Realistic physics engine</li>
+                            <li>Multiple challenging levels</li>
+                            <li>Smooth animation effects</li>
+                            <li>Creative obstacle designs</li>
+                        </ul>
+
+                        <h5>How to Play:</h5>
+                        <ul>
+                            <li>Arrow keys or WASD to move</li>
+                            <li>Spacebar to jump</li>
+                            <li>R key to restart level</li>
+                            <li>Reach the flag to complete each level</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Recommended Games</h5>
+                    </div>
+                    <div class="card-body" id="recommended-games">
+                        <a href="../action/slope.html" class="text-decoration-none">
+                            <div class="recommended-game-item">
+                                <div class="recommended-game-title">Slope</div>
+                                <div class="recommended-game-category">Action Game</div>
+                            </div>
+                        </a>
+                        <a href="../racing/smash-karts.html" class="text-decoration-none">
+                            <div class="recommended-game-item">
+                                <div class="recommended-game-title">Smash Karts</div>
+                                <div class="recommended-game-category">Racing Game</div>
+                            </div>
+                        </a>
+                        <a href="../racing/moto-x3m.html" class="text-decoration-none">
+                            <div class="recommended-game-item">
+                                <div class="recommended-game-title">Moto X3M</div>
+                                <div class="recommended-game-category">Racing Game</div>
+                            </div>
+                        </a>
+                        <a href="geometry-dash.html" class="text-decoration-none">
+                            <div class="recommended-game-item">
+                                <div class="recommended-game-title">Geometry Dash</div>
+                                <div class="recommended-game-category">Puzzle Game</div>
+                            </div>
+                        </a>
+                        <a href="../sports/snow-rider-3d.html" class="text-decoration-none">
+                            <div class="recommended-game-item">
+                                <div class="recommended-game-title">Snow Rider 3D</div>
+                                <div class="recommended-game-category">Sports Game</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-gamepad me-2"></i>Monster Survivors
+                    </h5>
+                    <p class="text-light">
+                        Your ultimate destination for free online games. Play thousands of games without downloads or installations.
+                    </p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../../categories/action.html" class="text-light">Action</a></li>
+                        <li><a href="../../categories/puzzle.html" class="text-light">Puzzle</a></li>
+                        <li><a href="../../categories/racing.html" class="text-light">Racing</a></li>
+                        <li><a href="../../categories/sports.html" class="text-light">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Popular</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../../trending.html" class="text-light">Trending</a></li>
+                        <li><a href="../../new.html" class="text-light">New Games</a></li>
+                        <li><a href="../../leaderboard.html" class="text-light">Top Rated</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h6 class="mb-3">Connect With Us</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Monster Survivors. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for gamers worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="../../assets/js/main.js"></script>
+
+    <script>
+        function startGame() {
+            const loading = document.getElementById('game-loading');
+            const iframe = document.getElementById('game-iframe');
+            
+            // Load iframe source only when starting game
+            if (!iframe.src && iframe.dataset.src) {
+                iframe.src = iframe.dataset.src;
+            }
+            
+            loading.style.display = 'none';
+            iframe.style.display = 'block';
+            iframe.style.opacity = '1';
+            
+            // Scroll to game area
+            iframe.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Auto-start game after page loads
+        window.addEventListener('load', function() {
+            setTimeout(startGame, 1000);
+        });
+    </script>
+</body>
+</html> 
